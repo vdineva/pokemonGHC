@@ -22,7 +22,7 @@ def starter_api():
 
 
 def get_random_starter():
-    starters = ["Charmander", "Squirtle", "Bulbasaur", "Pikachu"]
+    starters = ["Charmander", "Squirtle", "Bulbasaur"]
     return starters[randint(0, len(starters)-1)]
 
 
