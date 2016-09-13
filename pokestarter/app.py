@@ -1,6 +1,6 @@
-from random import randint
 from flask import Flask, jsonify, render_template
 
+from starters import get_random_starter
 
 app = Flask(__name__)
 
@@ -19,11 +19,6 @@ def starter_api():
     response = jsonify(data)
     response.status_code = 200
     return response
-
-
-def get_random_starter():
-    starters = ["Charmander", "Squirtle", "Bulbasaur"]
-    return starters[randint(0, len(starters)-1)]
 
 
 if __name__ == "__main__":

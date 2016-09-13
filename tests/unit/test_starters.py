@@ -1,5 +1,6 @@
-from pokestarter.app import get_random_starter
+from pokestarter.starters import get_random_starter
 import unittest
+
 
 class TestPokemon(unittest.TestCase):
 

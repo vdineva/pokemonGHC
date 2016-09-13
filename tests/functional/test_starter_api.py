@@ -2,6 +2,7 @@ import json
 import requests
 import unittest
 
+
 class TestPokemon(unittest.TestCase):
 
     def test_get_starter_api(self):
