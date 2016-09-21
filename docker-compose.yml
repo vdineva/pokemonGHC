@@ -17,7 +17,7 @@ services:
     volumes:
       - /pokestarter
     ports:
-      - "6000:5000"
+      - "5050:5000"
   production-environment:
     image: ghc-demo-env:prod
     container_name: ghc-prod-env
