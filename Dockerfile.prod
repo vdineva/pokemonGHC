@@ -1,0 +1,6 @@
+FROM python:2.7
+WORKDIR /pokestarter_prod/
+ADD requirements.txt /pokestarter_prod/requirements.txt
+RUN pip install -r requirements.txt
+ADD . /pokestarter_prod
+CMD gunicorn --reload -w 4 -b 0.0.0.0:5000 pokestarter.app:app
