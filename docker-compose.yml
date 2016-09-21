@@ -1,0 +1,27 @@
+version: '2'
+services:
+  jenkins:
+    image: ghc-jenkins:demo
+    container_name: ghc-jenkins
+    ports:
+      - "8080:8080"     
+    volumes_from:
+      - test-environment:rw
+      - production-environment:rw
+    links:
+      - test-environment
+      - production-environment
+  test-environment:
+    image: ghc-demo-env:test
+    container_name: ghc-test-env
+    volumes:
+      - /pokestarter
+    ports:
+      - "6000:5000"
+  production-environment:
+    image: ghc-demo-env:prod
+    container_name: ghc-prod-env
+    volumes:
+      - /pokestarter_prod
+    ports:
+      - "5000:5000"
