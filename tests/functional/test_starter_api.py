@@ -1,4 +1,5 @@
 import json
+import os
 import requests
 import unittest
 
@@ -6,7 +7,8 @@ import unittest
 class TestPokemon(unittest.TestCase):
 
     def test_get_starter_api(self):
-        response = requests.get("http://localhost:5000/api")
+        url = os.environ.get("TEST_URL") or "http://localhost:5000/api"
+        response = requests.get(url)
         self.assertEquals(response.status_code, 200)
         json_data = json.loads(response.content)
 
