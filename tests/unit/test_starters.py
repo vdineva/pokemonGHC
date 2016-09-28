@@ -6,5 +6,7 @@ class TestPokemon(unittest.TestCase):
 
     def test_get_random_starters(self):
         starters = ["Charmander", "Squirtle", "Bulbasaur"]
-        starter = get_random_starter()
-        self.assertIn(starter, starters)
+
+        for i in range(0, 50):
+            starter = get_random_starter()
+            self.assertIn(starter, starters)
