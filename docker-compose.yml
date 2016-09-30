@@ -1,7 +1,7 @@
 version: '2'
 services:
   jenkins:
-    image: ghc-jenkins:demo
+    image: mkam/ghc-jenkins:demo
     container_name: ghc-jenkins
     ports:
       - "8080:8080"     
@@ -12,14 +12,14 @@ services:
       - test-environment
       - production-environment
   test-environment:
-    image: ghc-demo-env:test
+    image: mkam/ghc-demo-env:test
     container_name: ghc-test-env
     volumes:
       - /pokestarter
     ports:
       - "5050:5000"
   production-environment:
-    image: ghc-demo-env:prod
+    image: mkam/ghc-demo-env:prod
     container_name: ghc-prod-env
     volumes:
       - /pokestarter_prod
