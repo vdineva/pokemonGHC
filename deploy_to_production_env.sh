@@ -1,6 +1,8 @@
 #!/bin/bash
 RELEASE_ARTIFACT=$1
-tar -xvf $RELEASE_ARTIFACT.tar.gz
+rm -rf $RELEASE_ARTIFACT
+mkdir $RELEASE_ARTIFACT
+tar -xvf $RELEASE_ARTIFACT.tar.gz -C $RELEASE_ARTIFACT --strip-components 1
 
 cp -r $RELEASE_ARTIFACT/pokestarter/static /pokestarter_prod/pokestarter
 cp -r $RELEASE_ARTIFACT/pokestarter/templates /pokestarter_prod/pokestarter
