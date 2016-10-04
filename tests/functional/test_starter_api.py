@@ -18,6 +18,6 @@ class TestPokemon(unittest.TestCase):
             starter = json_data.get("pokemon")
             self.assertIsNotNone(starter)
 
-            starters = ["Charmander", "Squirtle", "Bulbasaur"]
+            starters = ["Charmander", "Squirtle", "Bulbasaur", "Pikachu"]
             self.assertIn(starter, starters)
             time.sleep(1)
