@@ -10,3 +10,15 @@ class TestPokemon(unittest.TestCase):
         for i in range(0, 50):
             starter = get_random_starter()
             self.assertIn(starter, starters)
+
+    def test_name_formatting(self):
+        for i in range(0, 50):
+            starter = get_random_starter()
+            first_letter = starter[0]
+            remaining_letters = starter[1:]
+            self.assertTrue(first_letter.isupper())
+            self.assertTrue(remaining_letters.islower())
+
+    @unittest.skip("Skipping test for demonstration purposes")
+    def test_skipped_test(self):
+        pass
